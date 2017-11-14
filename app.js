@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const port = process.argv[2] || 3000;
 const path = process.argv[3] || '/api/v1';
 app.listen(port, function () {
-    console.log("Server listening on port : " + port + 'with path ' +path);
+    console.log("Server listening on port : " + port + ' with path ' +path);
 });
 
 /* Body-parser init */
@@ -16,3 +16,5 @@ app.use(bodyParser.json());
 
 /* Router configuration */
 app.use(require('./routes/routing'));
+
+module.exports = path;
