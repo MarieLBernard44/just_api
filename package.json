@@ -1,0 +1,20 @@
+{
+  "name": "just-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "node",
+    "js"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "faker": "^4.1.0"
+  }
+}
