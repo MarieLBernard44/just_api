@@ -8,7 +8,7 @@ Installation :
 
 ```bash
 git clone https://github.com/MarieLBernard44/just_api.git
-cd api-express
+cd just_api
 npm i
 ```
 
