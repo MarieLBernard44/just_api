@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  database:
+    # build: docker-config/database
+    dockerfile: docker-config/mysql-dockerfile
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+
+  just_api_node:
+    build: .
+    dockerfile: docker-config/node-dockerfile
+    ports:
+      - "31337:3000"
+    depends_on:
+      - database
