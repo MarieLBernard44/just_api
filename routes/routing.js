@@ -17,4 +17,12 @@ router.get(path+'/:activity', function (req, res) {
     profileController.getByActivity(req, res);
 });
 
+
+
+/* test des vues*/
+app.get('/test', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
+
+
 module.exports = router;
