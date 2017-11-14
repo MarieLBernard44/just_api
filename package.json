@@ -1,10 +1,14 @@
 {
   "name": "just-api",
   "version": "0.0.1",
-  "description": "",
+  "description": "Sujet 3",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:MarieLBernard44/just_api.git"
   },
   "keywords": [
     "api",
@@ -12,6 +16,12 @@
     "node",
     "js"
   ],
+  "author": "Nous",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarieLBernard44/just_api/issues"
+  },
+  "homepage": "https://github.com/MarieLBernard44/just_api#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
