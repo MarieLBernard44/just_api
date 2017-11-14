@@ -1,0 +1,16 @@
+html
+  head
+    title!= title
+  body
+    h1!= message
+
+    form(action="/", method="GET")
+                div
+                    label(for="say") Activité:
+                    br
+                    select(name="say" value="choisir dans la liste")
+                br
+
+                button(type="submit") Rechercher un profil
+
+    Table
