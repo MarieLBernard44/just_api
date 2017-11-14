@@ -1,16 +1,18 @@
+
 html
   head
     title!= title
   body
     h1!= message
 
-    form(action="/", method="GET")
+    form(action="/apiv1/", method="GET")
+
                 div
-                    label(for="say") Activité:
+                    label(for="activite") Activité:
                     br
-                    select(name="say" value="choisir dans la liste")
+                    select(name="activite" value="choisir dans la liste")
+                      option(value=banque) banque
+                      option(value=assurance) assurance
                 br
 
                 button(type="submit") Rechercher un profil
-
-    Table

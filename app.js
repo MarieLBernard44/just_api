@@ -18,3 +18,7 @@ app.use(bodyParser.json());
 app.use(require('./routes/routing'));
 
 module.exports = path;
+
+/* configuration des vues*/
+app.set('views', './view')
+app.set('view engine', 'pug')
