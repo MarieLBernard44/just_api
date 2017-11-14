@@ -30,3 +30,16 @@ Préfixer l'api de l'uri suivante : /api/v1
 
 
 
+# Application conteneurisée
+
+Construction de l'image à partir du dockerfile (racine de l'application)
+
+```docker build -t <mytag> .``` 
+
+Lancement du conteneur
+
+```docker run -p 31337:3000 -d <mytag>``` 
+
+Tester 
+
+```curl -i localhost:31337```
