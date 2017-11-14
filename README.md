@@ -18,7 +18,7 @@ Démarrage :
 npm start
 ```
 
-Accès à l'API sur l'url : `http://locahost:3000`
+Accès à l'API sur l'url : `http://localhost:3000`
 
 # Urls de l'API
 
