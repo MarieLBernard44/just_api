@@ -32,6 +32,8 @@ Préfixer l'api de l'uri suivante : /api/v1
 
 # Application conteneurisée
 
+Le port exposé du conteneur est le port 8080, le port ouvert sur la machine hôte est le port 31337 et le port du serveur node JS est le 3000 
+
 Construction de l'image à partir du dockerfile (racine de l'application)
 
 ```docker build -t <mytag> .``` 
