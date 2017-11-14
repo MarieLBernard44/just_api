@@ -3,22 +3,26 @@ html
   head
     title!= title
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+
   body
 
-    div(class="jumbotron")
-      h3 Choisissez une activité :
+    .container
+      .jumbotron
+        h3 Choisissez une activité :
 
-      button(class="btn btn-info" href= '/api/v1/banque') Banque
-      button(class="btn btn-info" href= '/api/v1/assurance') Assurance
+        a(class="btn btn-info" href= "/api/v1/banque") Banque
+        a(class="btn btn-info" href= '/api/v1/assurance') Assurance
 
-      table(class="table table-hover")
-        thead
-          tr
-            th(scope="col") FirstName
-            th(scope="col") LastName
-            th(scope="col") Email
-        tbody
-          tr
-            td test
-            td test
-            td test
+    .container
+      .jumbotron
+        table(class="table table-hover")
+          thead
+            tr
+              th(scope="col") FirstName
+              th(scope="col") LastName
+              th(scope="col") Email
+          tbody
+            tr
+              td test
+              td test
+              td test

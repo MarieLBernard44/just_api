@@ -1,11 +1,40 @@
-var Profile = require('../model/entity/profile.js');
+/* Load Profile entity */
+const Profile = require('../model/entity/profile.js');
 
-/* display list of all Profiles */
-exports.getProfilesList = function(req, res) {
-    res.send('TODO: Profile list');
-};
+/* Load Profile Repository */
+const ProfileRepository = require('../model/repository/profileRepository');
 
-/* display list by activity sector */
-exports.getProfilesByActivity = function(req, res) {
-    res.send('TODO: Profile by activity');
-};
+/* Load Controller Common */
+const CommonController = require('./commonController');
+
+/**
+ * Profile Controller
+ */
+
+class ProfileController {
+
+    constructor() {
+        this.profileRepository = new ProfileRepository();
+        this.common = new CommonController();
+    }
+
+    /**
+     * Finds all entities.
+     * @return all entities
+     */
+    getProfilesList(res) {
+        this.profileRepository.getProfilesList()
+            .then(this.common.findSuccess(res))
+            .catch(this.common.findError(res));
+    };
+
+    getProfilesByActivity(req, res) {
+        let activity = req.params.activity;
+
+        this.profileRepository.getProfilesByActivity(activity)
+            .then(this.common.findSuccess(res))
+            .catch(this.common.findError(res));
+    };
+}
+
+module.exports = ProfileController;

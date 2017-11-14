@@ -14,11 +14,20 @@ app.listen(port, function () {
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+/* Authorize external access */
+const allowCrossDomain = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+};
+
 /* Router configuration */
+app.use(allowCrossDomain);
 app.use(require('./routes/routing'));
 
-module.exports = path;
+/* Rendering configuration */
+app.set('views', './view');
+app.set('view engine', 'pug');
 
-/* configuration des vues*/
-app.set('views', './view')
-app.set('view engine', 'pug')
+module.exports = path;
