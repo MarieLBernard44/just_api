@@ -7,7 +7,7 @@ Npm
 
 Installation :
 
-git clone git@github.com
+git clone https://github.com/MarieLBernard44/just_api.git
 cd just_api
 npm i
 
