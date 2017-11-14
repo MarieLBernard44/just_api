@@ -2,17 +2,23 @@
 html
   head
     title!= title
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
   body
-    h1!= message
 
-    form(action="/apiv1/", method="GET")
+    div(class="jumbotron")
+      h3 Choisissez une activité :
 
-                div
-                    label(for="activite") Activité:
-                    br
-                    select(name="activite" value="choisir dans la liste")
-                      option(value=banque) banque
-                      option(value=assurance) assurance
-                br
+      button(class="btn btn-info" href= '/api/v1/banque') Banque
+      button(class="btn btn-info" href= '/api/v1/assurance') Assurance
 
-                button(type="submit") Rechercher un profil
+      table(class="table table-hover")
+        thead
+          tr
+            th(scope="col") FirstName
+            th(scope="col") LastName
+            th(scope="col") Email
+        tbody
+          tr
+            td test
+            td test
+            td test
