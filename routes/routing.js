@@ -20,7 +20,7 @@ router.get(path+'/:activity', function (req, res) {
 
 
 /* test des vues*/
-app.get('/test', function (req, res) {
+router.get('/test', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
