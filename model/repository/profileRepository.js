@@ -1,4 +1,4 @@
-const db = require('./db-config');
+const db = require('../../db-config');
 
 // Requête pour récupérer les profiles du secteur Banque
 db.query('SELECT * from profile where sector="Banque"', function (error, results, fields) {
