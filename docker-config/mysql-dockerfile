@@ -1,7 +1,6 @@
 FROM mysql
 
-# Copy mysql 
-COPY dump.sql .
-
-
-
+ENV MYSQL_ROOT_PASSWORD root  
+ENV MYSQL_DATABASE just_api  
+ENV MYSQL_USER imie  
+ENV MYSQL_PASSWORD passe
