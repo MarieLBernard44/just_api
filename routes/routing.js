@@ -14,7 +14,7 @@ router.get(path+'/', function (req, res) {
     profileController.getAll(res);
 });
 
-router.get(path+'/?activite=:activity', function (req, res) {
+router.get(path+'/:activity', function (req, res) {
     profileController.getByActivity(req, res);
 });
 
@@ -22,7 +22,7 @@ router.get(path+'/?activite=:activity', function (req, res) {
 
 /* test des vues*/
 router.get('/test', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index');
 });
 
 
