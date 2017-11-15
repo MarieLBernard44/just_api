@@ -1,8 +1,5 @@
-/* Load Profile entity */
-const Profile = require('../entity/profile.js');
-
 /* Load Database */
-const db = require('../../db-config');
+const db = require('../db-config');
 
 /* Load bluebird Promise */
 const Promise = require('bluebird');
