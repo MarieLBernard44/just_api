@@ -60,8 +60,4 @@ class ProfileRepository {
     };
 }
 
-<<<<<<< HEAD
 module.exports = ProfileRepository;
-=======
-module.exports = ProfileRepository;
->>>>>>> 1ff9f7ad675527d752cbc1af76ff492f1bcaa671

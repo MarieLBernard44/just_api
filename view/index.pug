@@ -6,6 +6,8 @@ html
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
     script(src='//code.jquery.com/jquery-3.2.1.min.js')
     script(src='./public/ajax.js')
+    script(src='./public/main.js')
+
   body
 
     .container
@@ -13,19 +15,18 @@ html
       .jumbotron
         h3 Choisissez une activité :
 
-        a(class="btn btn-info" href= "/api/v1/banque") Banque
-        a(class="btn btn-info" href= '/api/v1/assurance') Assurance
+        a#banbut(class="btn btn-info") Banque
+        a#assbut(class="btn btn-info") Assurance
 
     .container
       .jumbotron
-        table(class="table table-hover")
+        table#restable(class="table table-hover")
           thead
             tr
               th(scope="col") FirstName
               th(scope="col") LastName
+              th(scope="col") Activité
               th(scope="col") Email
-          tbody
-            tr
-              td test
-              td test
-              td test
+              th(scope="col") Téléphone
+              th(scope="col") Date inscription
+          tbody#tabody
