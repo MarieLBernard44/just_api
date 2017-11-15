@@ -1,0 +1,11 @@
+FROM mysql
+
+ENV MYSQL_ROOT_PASSWORD root  
+ENV MYSQL_DATABASE just_api  
+ENV MYSQL_USER imie  
+ENV MYSQL_PASSWORD passe
+
+COPY DB .
+
+RUN ["chmod", "+x", "install.sh"]
+RUN [ "/bin/sh", "install.sh" ]

@@ -1,8 +1,5 @@
-/* Load Profile entity */
-const Profile = require('../model/entity/profile.js');
-
 /* Load Profile Repository */
-const ProfileRepository = require('../model/repository/profileRepository');
+const ProfileRepository = require('../repository/profileRepository');
 
 /* Load Controller Common */
 const CommonController = require('./commonController');
