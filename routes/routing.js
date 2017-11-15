@@ -22,4 +22,8 @@ router.get('/test', function (req, res) {
   res.render('index');
 });
 
+router.get('/download/:activity/', function(req, res) {
+    profileController.downloadProfilesByActivity(req, res);
+});
+
 module.exports = router;
