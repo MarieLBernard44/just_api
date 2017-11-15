@@ -19,7 +19,7 @@ router.get('/api/v1/:activity', function (req, res) {
 
 /* test des vues*/
 router.get('/test', function (req, res) {
-  res.render('index');
+  res.render('index',  { title: 'A3dev', message: 'Liste des profils'});
 });
 
 router.get('/download/:activity/', function(req, res) {
