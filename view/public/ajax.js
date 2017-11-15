@@ -1,62 +1,47 @@
 var urlban = 'http://localhost:3000/api/v1/banque'
 var urlass = 'http://localhost:3000/api/v1/assurance'
+var urlbat = 'http://localhost:3000/api/v1/batiment'
+var urldev = 'http://localhost:3000/api/v1/developpement'
+var urlsan = 'http://localhost:3000/api/v1/sante'
 var url = 'http://localhost:3000/api/v1/'
 
-getAll()
+getProfil(url)
 
-$( document ).ready(function() {
-$( "#allbut" ).click( function() {
+function getProfil(url){
   $("#tabody").empty()
-  getAll()
-});
-});
-function getAll(){
-$.get(url, function (data) {
-  for (var key in data){
-    var item = data[key];
-    var tr = document.createElement('tr')
-    for (var key in item){
-      var td = document.createElement('td')
-      td.append(item[key])
-      tr.append(td)
+  $.get(url, function (data) {
+    for (var key in data){
+      var item = data[key];
+      var tr = document.createElement('tr')
+      for (var key in item){
+        var td = document.createElement('td')
+        td.append(item[key])
+        tr.append(td)
+      }
+      $("#tabody").append(tr);
     }
-    $("#tabody").append(tr);
-  }
-})
+  })
 }
 
 $( document ).ready(function() {
-
+  $( "#allbut" ).click( function() {
+    getProfil(url)
+  });
   $( "#banbut" ).click( function() {
-    $("#tabody").empty()
-    $.get(urlban, function (data) {
-      for (var key in data){
-        var item = data[key];
-        var tr = document.createElement('tr')
-        for (var key in item){
-          var td = document.createElement('td')
-          td.append(item[key])
-          tr.append(td)
-        }
-        $("#tabody").append(tr);
-      }
-    })
+    getProfil(urlban)
+  });
+  $( "#assbut" ).click( function() {
+    getProfil(urlass)
+  });
+  $( "#batbut" ).click( function() {
+    getProfil(urlbat)
+  });
+  $( "#devbut" ).click( function() {
+    getProfil(urldev)
+  });
+  $( "#sanbut" ).click( function() {
+    getProfil(urlsan)
   });
 
-  $( "#assbut" ).click( function() {
-    $("#tabody").empty()
-    $.get(urlass, function (data) {
-      for (var key in data){
-        var item = data[key];
-        var tr = document.createElement('tr')
-        for (var key in item){
-          var td = document.createElement('td')
-          td.append(item[key])
-          tr.append(td)
-        }
-        $("#tabody").append(tr);
-      }
-    });
-  });
 
 });
