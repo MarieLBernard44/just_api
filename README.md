@@ -32,16 +32,14 @@ Préfixer l'api de l'uri suivante : /api/v1
 
 # Application conteneurisée
 
-Le port ouvert sur la machine hôte est le port 31337 et le port du serveur node JS exposé sur le conteneur est le 3000 
+Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
 
-Construction de l'image à partir du dockerfile (racine de l'application)
+``` docker-compose build ```
 
-```docker build -t <mytag> .``` 
+Lancement de l'application en mode démon 
 
-Lancement du conteneur
+``` docker-compose up  -d ```
 
-```docker run -p 31337:3000 -d <mytag>``` 
+Accès via le navigateur
 
-Tester 
-
-```curl -i localhost:31337```
+``` http://http://localhost:3000/ ```
