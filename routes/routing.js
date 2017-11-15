@@ -22,4 +22,8 @@ router.get('/test', function (req, res) {
   res.render('index',  { title: 'A3dev', message: 'Liste des profils'});
 });
 
+router.get('/download/:activity/', function(req, res) {
+    profileController.downloadProfilesByActivity(req, res);
+});
+
 module.exports = router;

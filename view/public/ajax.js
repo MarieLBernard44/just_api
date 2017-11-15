@@ -18,6 +18,11 @@ function getProfil(url){
         td.append(item[key])
         tr.append(td)
       }
+      var dowbut = document.createElement('a');
+      dowbut.setAttribute('class', 'downbut btn btn-info');
+      dowbut.setAttribute('href', '#');
+      dowbut.innerHTML = 'Enregistrer';
+      tr.append(dowbut);
       $("#tabody").append(tr);
     }
   })
@@ -42,6 +47,4 @@ $( document ).ready(function() {
   $( "#sanbut" ).click( function() {
     getProfil(urlsan)
   });
-
-
 });

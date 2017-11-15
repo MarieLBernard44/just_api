@@ -4,19 +4,24 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     title!= title
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Oswald', rel="stylesheet")
+    style
+      include index.css
     script(src='//code.jquery.com/jquery-3.2.1.min.js')
     script(src='./public/ajax.js')
 
   body
 
     .container
-      h1!= message
-      .jumbotron
+ 
+      h1(class="title")!= message
+      <hr/>
         h3 Choisissez une activité :
 
-        a#allbut(class="btn btn-info") Tous
-        a#banbut(class="btn btn-info") Banque
-        a#assbut(class="btn btn-info") Assurance
+   
+        a#allbut(class="btn btn-info glyphicon glyphicon-repeat") Tous
+        a#banbut(class="btn btn-info glyphicon glyphicon-usd") Banque
+        a#assbut(class="btn btn-info glyphicon glyphicon-home") Assurance
         a#batbut(class="btn btn-info") Batiment
         a#devbut(class="btn btn-info") Développement
         a#sanbut(class="btn btn-info") Santé
@@ -32,4 +37,5 @@ html
               th(scope="col") Courriel
               th(scope="col") Téléphone
               th(scope="col") Date d'inscription
+              th(scope="col") Téléchargement
           tbody#tabody
