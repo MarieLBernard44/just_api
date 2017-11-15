@@ -8,5 +8,4 @@ ENV MYSQL_PASSWORD passe
 COPY BDD .
 
 RUN ["chmod", "+x", "install.sh"]
-
 RUN [ "/bin/sh", "install.sh" ]

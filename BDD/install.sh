@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash 
 
+echo 'Start Mysql daemon';
 /etc/init.d/mysql start
-# create database
-mysql -u root -e "create database just_api;"
+
+echo 'Create & populate database';
+mysql -u root -e "create database just_api; USE just_api; SOURCE ./dump.sql;"; 
 sleep 2;
-mysql -u root --password=root just_api < dump.sql; 

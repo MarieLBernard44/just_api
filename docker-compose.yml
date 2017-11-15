@@ -2,12 +2,12 @@ database:
   build: .
   dockerfile: docker-config/mysql-dockerfile
   ports:
-    - "3307:3306"
+    - "3306:3306"
     
 node_server:
   build: .
   dockerfile: docker-config/node-dockerfile
   ports:
-    - "31337:3000"
+    - "3000:3000"
   links:
     - database:database  
