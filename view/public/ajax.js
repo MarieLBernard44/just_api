@@ -1,37 +1,38 @@
-var url = 'http://localhost:3000/api/v1/'
-$.get(url, function (data) {
-        //console.log(data);
-});
+var urlban = 'http://localhost:3000/api/v1/banque'
+var urlass = 'http://localhost:3000/api/v1/assurance'
 
 $( document ).ready(function() {
 
-
-  $( "#banbut" ).on( "click", function() {
-
+  $( "#banbut" ).click( function() {
+    $("#tabody").empty()
+    $.get(urlban, function (data) {
+      //console.log(data)
+      for (var key in data){
+        var item = data[key];
+        var tr = document.createElement('tr')
+        for (var key in item){
+          var td = document.createElement('td')
+          td.append(item[key])
+          tr.append(td)
+        }
+        $("#tabody").append(tr);
+      }
+    })
   });
 
-  $( "#assbut" ).on( "click", function() {
-    $.get(url, function (data) {
-
+  $( "#assbut" ).click( function() {
+    $("#tabody").empty()
+    $.get(urlass, function (data) {
       for (var key in data){
-
         var item = data[key];
-        console.log(item);
-
-        if (item.sector == 'Assurance'){
-          var tr = document.createElement('tr')
-          for (var key in item){
-            var td = document.createElement('td')
-            td.append(item[key])
-            console.log(td)
-            tr.append(td)
-          }
-
-          $("#tabody").append(tr);
+        var tr = document.createElement('tr')
+        for (var key in item){
+          var td = document.createElement('td')
+          td.append(item[key])
+          tr.append(td)
         }
-
+        $("#tabody").append(tr);
       }
-
     });
   });
 
