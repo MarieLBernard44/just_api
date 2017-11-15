@@ -30,12 +30,14 @@ Prérequis :
 Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
 
 ```bash
-docker-compose build ```
+docker-compose build 
+```
 
 Lancement de l'application en mode démon 
 
 ```bash
-docker-compose up  -d ```
+docker-compose up  -d 
+```
 
 Accès via le navigateur
 
