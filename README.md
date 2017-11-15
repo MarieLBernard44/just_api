@@ -33,6 +33,13 @@ Clonage du repository
 git clone https://github.com/MarieLBernard44/just_api.git
 cd just_api
 ```
+Configuration de la base de données (db-config.js)
+``` const db  = mysql.createPool({
+  //host     : 'localhost',
+  host     : 'database',
+  ...
+});
+```
 
 Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
 
