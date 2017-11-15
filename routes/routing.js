@@ -19,7 +19,7 @@ router.get('/api/v1/:activity', function (req, res) {
 
 /* test des vues*/
 router.get('/test', function (req, res) {
-  res.render('index');
+  res.render('index',  { title: 'Hey', message: 'Hello there!'});
 });
 
 module.exports = router;
