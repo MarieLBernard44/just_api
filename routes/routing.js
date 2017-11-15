@@ -23,10 +23,8 @@ router.get('/test', function (req, res) {
 });
 
 /* test du téléchargement */
-router.get('/download', function(req, res){
-	console.log(req);
-  var file = __dirname + '/../file.CSV';
-  res.download(file); // Set disposition and send it.
+router.get('/api/v1/download/:activity/', function(req, res){
+	profileController.downloadProfilesByActivity(req, res);
 });
 
 
