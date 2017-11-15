@@ -7,10 +7,11 @@ const Promise = require('bluebird');
 class ProfileRepository {
 
     getProfilesList() {
-        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`,  DATE_FORMAT(`createdAt`, "%d-%m-%Y") from profile';
+        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") from profile ORDER BY `firstname`';
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
                 if (err) {
+                    console.log(err);
                     reject({status: '500', message: 'Internal server error'});
                 } else {
                     connection.query(sqlRequest, function (error, results) {
@@ -33,10 +34,11 @@ class ProfileRepository {
 
     getProfilesByActivity(activity) {
         let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") from profile ' +
-            'where sector=' + db.escape(activity);
+            'where sector=' + db.escape(activity) + 'ORDER BY `firstname`';
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
                 if (err) {
+                    console.log(err);
                     reject({status: '500', message: 'Internal server error'});
                 } else {
                     connection.query(sqlRequest, function (error, results) {
