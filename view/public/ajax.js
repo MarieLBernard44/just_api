@@ -39,11 +39,11 @@ function getProfil(url){
         td.append(item[key])
         tr.append(td)
       }
-      var dowbut = document.createElement('a');
+     /* var dowbut = document.createElement('a');
       dowbut.setAttribute('class', 'downbut btn btn-info');
       dowbut.setAttribute('href', url+'download/activité');
       dowbut.innerHTML = 'Enregistrer';
-      tr.append(dowbut);
+      tr.append(dowbut);*/
       $("#tabody").append(tr);
     }
   })

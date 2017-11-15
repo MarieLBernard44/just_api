@@ -12,6 +12,7 @@ class CommonController {
 
     findError(res) {
         return (error) => {
+            console.log(error);
             res.status(error.status);
             res.json(error.message);
         }
