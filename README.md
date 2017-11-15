@@ -35,7 +35,7 @@ cd just_api
 ```
 Configuration de la base de données (db-config.js)
 ``` const db  = mysql.createPool({
-  //host     : 'localhost',
+  ...
   host     : 'database',
   ...
 });
