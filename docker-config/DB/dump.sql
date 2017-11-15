@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `just_api`
 --
-
+CREATE DATABASE IF NOT EXISTS `just_api`;
+USE `just_api`;
 -- --------------------------------------------------------
 
 --
@@ -51,7 +52,7 @@ INSERT INTO `profile` (`ID`, `firstname`, `lastname`, `sector`, `email`, `phone`
 (7, 'Silvano', 'Costanzo', 'Assurance', 'silvano@gmail.com', '06.12.35.35.78', '1999-02-06'),
 (8, 'Francois', 'Doussin', 'Assurance', 'francois@gmail.com', '06.32.14.15.87', '2015-08-01'),
 (9, 'Dylan', 'Gosselin', 'Assurance', 'dylan@gmail.com', '02.32.36.35.38', '1995-02-18'),
-(10, 'Valentin', 'Haddad', 'Assurance', 'valention@gmail.com', '06.32.18.78.89', '2014-03-30');
+(10, 'Valentin', 'Haddad', 'Assurance', 'valention@gmail.com', '06.32.18.78.89', '2014-03-30'),
 (11, 'Marie', 'Bernard', 'Batiment', 'marie@gmail.com', '06.19.75.57.98', '2017-07-18'),
 (12, 'Clem', 'Tournery', 'Batiment', 'clem@gmail.com', '06.22.00.33.44', '2016-06-11'),
 (13, 'Loic', 'Arif', 'Batiment', 'loic@gmail.com', '06.21.54.36.35', '2015-03-15'),
@@ -61,12 +62,12 @@ INSERT INTO `profile` (`ID`, `firstname`, `lastname`, `sector`, `email`, `phone`
 (17, 'Silvano', 'Costanzo', 'Developpement', 'silvano@gmail.com', '06.12.35.35.78', '1999-02-06'),
 (18, 'Francois', 'Doussin', 'Developpement', 'francois@gmail.com', '06.32.14.15.87', '2015-08-01'),
 (19, 'Dylan', 'Gosselin', 'Developpement', 'dylan@gmail.com', '02.32.36.35.38', '1995-02-18'),
-(20, 'Valentin', 'Haddad', 'Developpement', 'valention@gmail.com', '06.32.18.78.89', '2014-03-30');
+(20, 'Valentin', 'Haddad', 'Developpement', 'valention@gmail.com', '06.32.18.78.89', '2014-03-30'),
 (21, 'Marie', 'Bernard', 'Sante', 'marie@gmail.com', '06.19.75.57.98', '2017-07-18'),
 (22, 'Clem', 'Tournery', 'Sante', 'clem@gmail.com', '06.22.00.33.44', '2016-06-11'),
 (23, 'Loic', 'Arif', 'Sante', 'loic@gmail.com', '06.21.54.36.35', '2015-03-15'),
 (24, 'Antoine', 'Bohssain', 'Sante', 'antoine@gmail.com', '02.30.25.14.57', '1998-02-02'),
-(25, 'Florian', 'Bouchet', 'Sante', 'florian@gmail.com', '02.30.54.54.87', '2010-05-30'),
+(25, 'Florian', 'Bouchet', 'Sante', 'florian@gmail.com', '02.30.54.54.87', '2010-05-30');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
