@@ -9,8 +9,6 @@ COPY package.json .
 # Copy app source in container
 COPY . .
 
-RUN npm i
-
-EXPOSE 3000
+RUN ["npm", "install"]
 
 CMD [ "npm", "start" ]
