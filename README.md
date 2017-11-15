@@ -1,4 +1,4 @@
-# API simple (sans Docker)
+# API - procédure d'installation simple (sans Docker)
 
 Prérequis :
 - NodeJS
