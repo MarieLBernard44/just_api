@@ -20,8 +20,21 @@ h3 { margin-left: 20px; }
     color: #253B84
 }
 
-.glyphicon-repeat:before, .glyphicon-usd:before, .glyphicon-home:before {
+.glyphicon-repeat:before, .glyphicon-usd:before, .glyphicon-apple:before, .glyphicon-floppy-disk:before, .glyphicon-tree-conifer:before, .glyphicon-home:before {
     margin-right: 10px;
+}
+
+.glyphicon:hover{
+    background: grey;
+    border: none;
+}
+
+.glyphicon {
+    border: none;
+}
+
+.glyphicon-repeat, .glyphicon-save-file {
+    background: #D20859;
 }
 
 .jumbotron {
