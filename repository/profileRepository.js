@@ -11,6 +11,7 @@ class ProfileRepository {
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
                 if (err) {
+                    console.log(err);
                     reject({status: '500', message: 'Internal server error'});
                 } else {
                     connection.query(sqlRequest, function (error, results) {
@@ -37,6 +38,7 @@ class ProfileRepository {
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
                 if (err) {
+                    console.log(err);
                     reject({status: '500', message: 'Internal server error'});
                 } else {
                     connection.query(sqlRequest, function (error, results) {
