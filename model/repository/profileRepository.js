@@ -1,6 +1,6 @@
+
 /* Load Profile entity */
 const Profile = require('../entity/profile.js');
-
 const db = require('../../db-config');
 
 class ProfileRepository {
@@ -40,3 +40,4 @@ class ProfileRepository {
 }
 
 module.exports = ProfileRepository;
+
