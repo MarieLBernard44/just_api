@@ -1,38 +1,46 @@
-
 /* Load Profile entity */
 const Profile = require('../entity/profile.js');
+
+/* Load Database */
 const db = require('../../db-config');
+
+/* Load bluebird Promise */
+const Promise = require('bluebird');
 
 class ProfileRepository {
 
     getProfilesList() {
-        let sqlRequest = 'SELECT * from profile"';
-        db.getConnection(function(err, connection) {
-            // Use the connection
-            connection.query(sqlRequest, function (error, results, fields) {
-                // And done with the connection.
-                connection.release();
+        let sqlRequest = 'SELECT * from profile';
+        return new Promise(function (resolve, reject) {
+            db.getConnection(function (err, connection) {
+                connection.query(sqlRequest, function (error, results, fields) {
+                    // And done with the connection.
+                    resolve(results, fields);
+                    connection.release();
 
-                // Handle error after the release.
-                if (error) throw error;
-
-                // Don't use the connection here, it has been returned to the pool.
+                    // Handle error after the release.
+                    if (error) {
+                        reject()
+                    }
+                });
             });
         });
     };
 
     getProfilesByActivity(activity) {
-        let sqlRequest = 'SELECT * from profile where sector='+db.escape(activity);
-        db.getConnection(function(err, connection) {
-            // Use the connection
-            connection.query(sqlRequest, function (error, results, fields) {
-                // And done with the connection.
-                connection.release();
+        let sqlRequest = 'SELECT * from profile where sector=' + db.escape(activity);
+        return new Promise(function (resolve, reject) {
+            db.getConnection(function (err, connection) {
+                connection.query(sqlRequest, function (error, results, fields) {
+                    // And done with the connection.
+                    resolve(results, fields);
+                    connection.release();
 
-                // Handle error after the release.
-                if (error) throw error;
-
-                // Don't use the connection here, it has been returned to the pool.
+                    // Handle error after the release.
+                    if (error) {
+                        reject()
+                    }
+                });
             });
         });
     };
