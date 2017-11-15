@@ -22,4 +22,12 @@ router.get('/test', function (req, res) {
   res.render('index');
 });
 
+/* test du téléchargement */
+router.get('/download', function(req, res){
+	console.log(req);
+  var file = __dirname + '/../file.CSV';
+  res.download(file); // Set disposition and send it.
+});
+
+
 module.exports = router;
