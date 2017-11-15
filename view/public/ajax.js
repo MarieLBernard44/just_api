@@ -7,6 +7,27 @@ var url = 'http://localhost:3000/api/v1/'
 
 getProfil(url)
 
+activities = getActivities()
+console.log(activities)
+var test = []
+for (key in activities){
+  var ref = url+activities[key];
+  console.log(ref)
+}
+
+function getActivities(){
+  $.get(url, function (data) {
+    var activities = []
+      for (var key in data){
+        var item = data[key];
+        activities.push(item.sector)
+      }
+    var tab = Array.from(new Set(activities))
+    console.log(tab)
+    return tab
+  })
+}
+
 function getProfil(url){
   $("#tabody").empty()
   $.get(url, function (data) {
@@ -20,7 +41,7 @@ function getProfil(url){
       }
       var dowbut = document.createElement('a');
       dowbut.setAttribute('class', 'downbut btn btn-info');
-      dowbut.setAttribute('href', '#');
+      dowbut.setAttribute('href', url+'download/activité');
       dowbut.innerHTML = 'Enregistrer';
       tr.append(dowbut);
       $("#tabody").append(tr);
