@@ -1,4 +1,4 @@
-# Création d'une API
+# API simple (sans Docker)
 
 Prérequis :
 - NodeJS
@@ -20,6 +20,27 @@ npm start
 
 Accès à l'API sur l'url : `http://localhost:3000`
 
+
+# Application conteneurisée avec docker - procédure d'installation
+
+Prérequis :
+- docker 
+- docker-compose
+
+Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
+
+```bash
+docker-compose build ```
+
+Lancement de l'application en mode démon 
+
+```bash
+docker-compose up  -d ```
+
+Accès via le navigateur
+
+Accès à l'API sur l'url : ``` http://localhost:3000/ ```
+
 # Urls de l'API
 
 Préfixer l'api de l'uri suivante : /api/v1
@@ -29,17 +50,3 @@ Préfixer l'api de l'uri suivante : /api/v1
 | GET    |    
 
 
-
-# Application conteneurisée
-
-Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
-
-``` docker-compose build ```
-
-Lancement de l'application en mode démon 
-
-``` docker-compose up  -d ```
-
-Accès via le navigateur
-
-``` http://http://localhost:3000/ ```
