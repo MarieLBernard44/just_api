@@ -7,17 +7,33 @@ class ProfileRepository {
 
     getProfilesList() {
         let sqlRequest = 'SELECT * from profile"';
-        db.query(sqlRequest, function (error, results, fields) {
-            if (error) throw error;
-            console.log(results);
+        db.getConnection(function(err, connection) {
+            // Use the connection
+            connection.query(sqlRequest, function (error, results, fields) {
+                // And done with the connection.
+                connection.release();
+
+                // Handle error after the release.
+                if (error) throw error;
+
+                // Don't use the connection here, it has been returned to the pool.
+            });
         });
     };
 
     getProfilesByActivity(activity) {
         let sqlRequest = 'SELECT * from profile where sector='+db.escape(activity);
-        db.query(sqlRequest, function (error, results, fields) {
-            if (error) throw error;
-            console.log(results);
+        db.getConnection(function(err, connection) {
+            // Use the connection
+            connection.query(sqlRequest, function (error, results, fields) {
+                // And done with the connection.
+                connection.release();
+
+                // Handle error after the release.
+                if (error) throw error;
+
+                // Don't use the connection here, it has been returned to the pool.
+            });
         });
     };
 
