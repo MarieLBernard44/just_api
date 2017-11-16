@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
 /* Init server listening */
 const port = process.argv[2] || 3000;
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 /* Authorize external access */
 const allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
-    res.header('Access-Control-Allow-Methods', 'GET');
+    res.header('Access-Control-Allow-Methods', 'GET,POST');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 };
