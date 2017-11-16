@@ -2,6 +2,13 @@ body {
     background: linear-gradient( white, grey);
 }
 
+.glyphicon-user {
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 30px;
+    color: #D20859;
+    cursor: pointer;
+}
 
 .container{
     background: white;
