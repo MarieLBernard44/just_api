@@ -1,8 +1,7 @@
 const mysql = require('mysql');
 
 const db  = mysql.createPool({
-// host     : 'database',
-  host     : 'database',
+  host     : 'localhost',
   user     : 'imie',
   password : 'passe',
   database : 'just_api'
