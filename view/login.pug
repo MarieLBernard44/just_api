@@ -16,7 +16,7 @@ html
       h1(class="title")!= message
       <hr/>
 
-        h3 Entrez vos identifiants :
+        h3!= info
 
         form(method='POST' action='/')
                   div.form-group
@@ -25,4 +25,4 @@ html
                   div.form-group
                     label(for='password') Password:
                     input#pw.form-control(type='password', placeholder='Enter password' name='password')
-                  button.btn.btn-primary(type='submit') Sign up
+                  button.btn.btn-primary(type='submit') Connexion

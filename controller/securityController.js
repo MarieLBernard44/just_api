@@ -55,13 +55,13 @@ class SecurityController {
         // check if login matches
         if (login !== 'test') {
             res.status(403);
-            return res.json('Authentication failed');
+            res.render('login', {title: 'A3dev', message: 'Authentification requise', info: 'Erreur ! Mauvais identifiants!'});
         } else {
 
             // check if password matches
             if (password !== 'password') {
                 res.status(403);
-                return res.json('Authentication failed');
+                res.render('login', {title: 'A3dev', message: 'Authentification requise', info: 'Erreur ! Mauvais identifiants!'});
             } else {
 
                 // if user is found and password is right
