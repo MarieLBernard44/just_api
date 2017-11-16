@@ -7,7 +7,7 @@ const Promise = require('bluebird');
 class ProfileRepository {
 
     getProfilesList() {
-        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") from profile ORDER BY `firstname`';
+        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") AS `createdAt` from profile ORDER BY `firstname`';
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
                 if (err) {
@@ -33,7 +33,7 @@ class ProfileRepository {
     };
 
     getProfilesByActivity(activity) {
-        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") from profile ' +
+        let sqlRequest = 'SELECT `firstname`,`lastname`,`sector`,`email`, `phone`, DATE_FORMAT(`createdAt`, "%d-%m-%Y") AS `createdAt` from profile ' +
             'where sector=' + db.escape(activity) + 'ORDER BY `firstname`';
         return new Promise(function (resolve, reject) {
             db.getConnection(function (err, connection) {
