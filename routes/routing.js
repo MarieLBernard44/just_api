@@ -13,7 +13,7 @@ const securityController = new SecurityController();
 
 
 router.get('/', function (req, res) {
-    res.render('login', {title: 'A3dev', message: 'Authentification requise'});
+    res.render('login', {title: 'A3dev', message: 'Authentification requise', info: 'Entrez vos identifiants :'});
 });
 
 /* API routes */
