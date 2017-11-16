@@ -7,15 +7,7 @@ var url = 'http://localhost:3000/api/v1/'
 
 getProfil(url)
 
-activities = getActivities()
-console.log(activities)
-var test = []
-for (key in activities){
-  var ref = url+activities[key];
-  console.log(ref)
-}
-
-function getActivities(){
+var activities =
   $.get(url, function (data) {
     var activities = []
       for (var key in data){
@@ -26,7 +18,7 @@ function getActivities(){
     console.log(tab)
     return tab
   })
-}
+console.log(activities)
 
 function getProfil(url){
   $("#tabody").empty()
@@ -39,14 +31,19 @@ function getProfil(url){
         td.append(item[key])
         tr.append(td)
       }
-     /* var dowbut = document.createElement('a');
-      dowbut.setAttribute('class', 'downbut btn btn-info');
-      dowbut.setAttribute('href', url+'download/activité');
-      dowbut.innerHTML = 'Enregistrer';
-      tr.append(dowbut);*/
       $("#tabody").append(tr);
     }
   })
+}
+function getLink(act){
+  var a = document.createElement('a')
+  a.setAttribute("class", "btn btn-info glyphicon glyphicon-save-file")
+  a.setAttribute("href", "http://localhost:3000/download/"+act)
+  a.innerHTML = 'Téléchargement'
+  var p = document.createElement('p')
+  p.innerHTML = 'Veuillez cliquer sur le bouton afin de télécharger la liste des profils du secteur'
+  $("#ddl").append(p)
+  $("#ddl").append(a)
 }
 
 $( document ).ready(function() {
@@ -55,17 +52,23 @@ $( document ).ready(function() {
   });
   $( "#banbut" ).click( function() {
     getProfil(urlban)
+    getLink('banque')
   });
   $( "#assbut" ).click( function() {
     getProfil(urlass)
+    getLink('assurance')
   });
   $( "#batbut" ).click( function() {
     getProfil(urlbat)
+    getLink('batiment')
   });
   $( "#devbut" ).click( function() {
     getProfil(urldev)
+    getLink('developpement')
   });
   $( "#sanbut" ).click( function() {
     getProfil(urlsan)
+    getLink('sante')
   });
+
 });

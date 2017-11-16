@@ -13,13 +13,12 @@ html
   body
 
     .container
- 
+
       h1(class="title")!= message
       <hr/>
+
         h3 Choisissez une activité :
 
-   
-       
         a#banbut(class="btn btn-info glyphicon glyphicon-usd") Banque
         a#assbut(class="btn btn-info glyphicon glyphicon-home") Assurance
         a#batbut(class="btn btn-info glyphicon glyphicon-tree-conifer") Batiment
@@ -39,6 +38,4 @@ html
               th(scope="col") Téléphone
               th(scope="col") Date d'inscription
           tbody#tabody
-      
-      span Veuillez cliquer sur le bouton afin de télécharger la liste des profils concernant ce secteur d'activité
-      a#tel(class="btn btn-info glyphicon glyphicon-save-file") Téléchargement
+        #ddl 
