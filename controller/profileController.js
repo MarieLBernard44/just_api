@@ -51,7 +51,7 @@ class ProfileController {
             let fileName = activity + '_profiles_' + Math.floor((Math.random() * 10000) + 1) + '.csv';
             let filePath = __dirname + '/../view/public/download/' + fileName;
             let csv = json2csv({data: result, fields: fields});
-
+            console.log(result);
             fs.writeFile('view/public/download/' + fileName, csv, function (err) {
                 if (err) {
                     console.log(err);

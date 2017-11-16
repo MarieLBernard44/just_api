@@ -2,11 +2,14 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
+const cookieParser = require('cookie-parser');
 
 /* Init server listening */
 const port = process.argv[2] || 3000;
 const path = process.argv[3] || '/api/v1';
+
+/* Cookie-parser */
+app.use(cookieParser());
 
 /* Body-parser init */
 app.use(bodyParser.urlencoded({extended: false}));
