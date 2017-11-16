@@ -39,7 +39,6 @@ router.get('/api/v1/:activity', function (req, res) {
 });
 
 /* Download route */
-
 router.get('/download/:activity/', function (req, res) {
     profileController.downloadProfilesByActivity(req, res);
 });

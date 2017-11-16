@@ -1,41 +1,36 @@
 
 html
   head
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-    title!= title
+    script(src='//code.jquery.com/jquery-3.2.1.min.js')
+    script(src='./public/ajax.js')
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
     link(href='//fonts.googleapis.com/css?family=Oswald', rel="stylesheet")
     style
       include index.css
-    script(src='//code.jquery.com/jquery-3.2.1.min.js')
-    script(src='./public/ajax.js')
+    title A3dev-sujet3
 
   body
-
     .container
-
-      h1(class="title")!= message
+      h1.title Liste des profils
       <hr/>
-
-        h3 Choisissez une activité :
-
-        a#banbut(class="btn btn-info glyphicon glyphicon-usd") Banque
-        a#assbut(class="btn btn-info glyphicon glyphicon-home") Assurance
-        a#batbut(class="btn btn-info glyphicon glyphicon-tree-conifer") Batiment
-        a#devbut(class="btn btn-info glyphicon glyphicon-floppy-disk") Développement
-        a#sanbut(class="btn btn-info glyphicon glyphicon glyphicon-apple") Santé
-         a#allbut(class="btn btn-info glyphicon glyphicon-repeat") Tous
+      h3 Choisissez une activité :
+      a#banbut.btn.btn-info.glyphicon.glyphicon-usd Banque
+      a#assbut.btn.btn-info.glyphicon.glyphicon-home Assurance
+      a#batbut.btn.btn-info.glyphicon.glyphicon-tree-conifer Batiment
+      a#devbut.btn.btn-info.glyphicon.glyphicon-floppy-disk Développement
+      a#sanbut.btn.btn-info.glyphicon.glyphicon-apple Santé
+      a#allbut.btn.btn-info.glyphicon.glyphicon-repeat Tous
 
     .container
       .jumbotron
-        table#restable(class="table table-hover")
+        table#restable.table.table-hover
           thead
             tr
-              th(scope="col") Prénom
-              th(scope="col") Nom
-              th(scope="col") Activité
-              th(scope="col") Courriel
-              th(scope="col") Téléphone
-              th(scope="col") Date d'inscription
+              th Prénom
+              th Nom
+              th Activité
+              th Courriel
+              th Téléphone
+              th Date d'inscription
           tbody#tabody
-        #ddl 
+        #ddl
