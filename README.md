@@ -64,11 +64,22 @@ Accès à l'API sur l'url : ``` http://localhost:3000/ ```
 
 # Urls de l'API
 
-Préfixer l'api de l'uri suivante : /api/v1
+Ci dessous, les routes de l’application web :
 
-| VERBES | URI        | 
-|--------|------------|
-| GET    |    
+| VERBES      | URL                     | ACTION                                                                |
+|-------------|-------------------------|-----------------------------------------------------------------------|
+| GET         |    /                    | Affiche l’interface de l’application web.                             |
+| POST        |    /                    | Génère le token d’authentification et créé un cookie pour le contenir.|
+| POST        |    /download/:activity  | Permet de télécharger une liste de profils par activité.              |
+
+Ci dessous, les url utilisées par notre API
+
+| VERBES      | URL                     | ACTION                                                                |
+|-------------|-------------------------|-----------------------------------------------------------------------|
+| GET         |    /api/v1              | Renvoie l’ensemble des profils.                             |
+| GET         |    /api/v1/:activity    | Renvoie les profils filtrés par secteur d’activité.|
+| POST        |    /api/v1/authenticate | Génère le token d’authentification si le nom d’utilisateur et le mot de passe renseignés sont valides.              |
+
 
 # Déploiement
 
