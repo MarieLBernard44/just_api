@@ -11,6 +11,7 @@ const securityController = new SecurityController();
 
 /* Login page */
 
+
 router.get('/', function (req, res) {
     res.render('login', {title: 'A3dev', message: 'Authentification requise'});
 });
@@ -21,7 +22,7 @@ router.post('/api/v1/authenticate', function (req, res) {
     securityController.authenticateApi(req, res);
 });
 
-router.post('/authenticate', function (req, res) {
+router.post('/', function (req, res) {
     securityController.authenticateView(req, res);
 });
 

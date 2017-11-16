@@ -78,8 +78,7 @@ class SecurityController {
                 //return this.common.securityError(token);
                 res.cookie('A3Token', token, {
                     maxAge: 86400 * 1000, // 24 hours
-                    httpOnly: true, // http only, prevents JavaScript cookie access
-                    secure: true // cookie must be sent over https / ssl
+                    httpOnly: false, // http only, prevents JavaScript cookie access
                 });
                 res.render('index', {title: 'A3dev', message: 'Liste des profils'});
             }
