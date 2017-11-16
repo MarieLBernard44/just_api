@@ -52,37 +52,53 @@ class SecurityController {
         let login = req.body.login;
         let password = req.body.password;
 
-        // check if login matches
-        if (login !== 'test') {
-            res.status(403);
-            res.render('login', {title: 'A3dev', message: 'Authentification requise', info: 'Erreur ! Mauvais identifiants!'});
+        if (req.cookies['A3Token']) {
+            res.clearCookie('A3Token');
+            res.render('login', {
+                title: 'A3dev',
+                message: 'Authentification requise',
+                info: 'Entrez vos identifiants :'
+            });
         } else {
-
-            // check if password matches
-            if (password !== 'password') {
+            // check if login matches
+            if (login !== 'test') {
                 res.status(403);
-                res.render('login', {title: 'A3dev', message: 'Authentification requise', info: 'Erreur ! Mauvais identifiants!'});
+                res.render('login', {
+                    title: 'A3dev',
+                    message: 'Authentification requise',
+                    info: 'Erreur ! Mauvais identifiants!'
+                });
             } else {
 
-                // if user is found and password is right
-                // create a token with only our given payload
-                // we don't want to pass in the entire user since that has the password
-                const payload = {
-                    login: login
-                };
-                let token = jwt.sign(payload, 'superPrivateKey', {
-                    expiresIn: '24 hour'
-                });
+                // check if password matches
+                if (password !== 'password') {
+                    res.status(403);
+                    res.render('login', {
+                        title: 'A3dev',
+                        message: 'Authentification requise',
+                        info: 'Erreur ! Mauvais identifiants!'
+                    });
+                } else {
 
-                // return the information including token as JSON
-                //return this.common.securityError(token);
-                res.cookie('A3Token', token, {
-                    maxAge: 86400 * 1000, // 24 hours
-                    httpOnly: false, // http only, prevents JavaScript cookie access
-                });
-                res.render('index', {title: 'A3dev', message: 'Liste des profils'});
+                    // if user is found and password is right
+                    // create a token with only our given payload
+                    // we don't want to pass in the entire user since that has the password
+                    const payload = {
+                        login: login
+                    };
+                    let token = jwt.sign(payload, 'superPrivateKey', {
+                        expiresIn: '24 hour'
+                    });
+
+                    // return the information including token as JSON
+                    //return this.common.securityError(token);
+                    res.cookie('A3Token', token, {
+                        maxAge: 86400 * 1000, // 24 hours
+                        httpOnly: false, // http only, prevents JavaScript cookie access
+                    });
+                    res.render('index', {title: 'A3dev', message: 'Liste des profils'});
+                }
             }
-
         }
     }
 
