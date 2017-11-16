@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient( white, grey);
+}
+
+.glyphicon-user {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #D20859;
+    cursor: pointer;
+    background: white;
+}
+
+span {
+    font-family: 'Oswald', sans-serif;
+    color: #D20859;
+    font-size: 25px;
+}
+
+
+.container{
+    background: white;
+    min-height: 800px;
+}
+
+h1, h3  {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 { font-size: 50px;}
+h3 { margin-left: 20px; }
+
+img { 
+    height: 120px;
+    margin-left: 100px;;
+ }
+
+.btn {
+  margin: 10px;
+  width: 220px;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 17px;
+  background: #253B84;
+  border-radius: 25px;
+}
+
+.title {
+    text-align: center;
+    color: #253B84
+}
+
+.glyphicon-repeat:before, .glyphicon-usd:before, .glyphicon-plus:before, .glyphicon-floppy-disk:before, .glyphicon-tree-conifer:before, .glyphicon-home:before {
+    margin-right: 10px;
+}
+
+.glyphicon:hover{
+    background: grey;
+    border: none;
+}
+
+.glyphicon {
+    border: none;
+}
+
+.glyphicon-repeat, .glyphicon-save-file {
+    background: #D20859;
+}
+
+.jumbotron {
+    margin: 20px;
+}

@@ -1,0 +1,41 @@
+
+html
+  head
+    script(src='//code.jquery.com/jquery-3.2.1.min.js')
+    script(src='./public/ajax.js')
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Oswald', rel="stylesheet")
+    style
+      include index.css
+    title A3dev-sujet3
+
+  body
+    .container
+      form(method='POST' action='/') 
+                      button#deconnect.glyphicon.glyphicon-user(type='submit') 
+                      span Déconnexion
+      h1.title Liste des profils
+        img(src=("./public/images/bandeau-ok.jpg"))
+      <hr/>
+      h3 Choisissez une activité :
+      a#banbut.btn.btn-info.glyphicon.glyphicon-usd Banque
+      a#assbut.btn.btn-info.glyphicon.glyphicon-home Assurance
+      a#batbut.btn.btn-info.glyphicon.glyphicon-tree-conifer Batiment
+      a#devbut.btn.btn-info.glyphicon.glyphicon-floppy-disk Développement
+      a#sanbut.btn.btn-info.glyphicon.glyphicon-plus Santé
+      a#allbut.btn.btn-info.glyphicon.glyphicon-repeat Tous
+
+      .jumbotron
+        #dllbut
+        table#restable.table.table-hover
+          thead
+            tr
+              th Prénom
+              th Nom
+              th Activité
+              th Courriel
+              th Téléphone
+              th Date d'inscription
+          tbody#tabody
+
+    
