@@ -36,12 +36,13 @@ function getProfil(url){
   })
 }
 function getLink(act){
+  $("#ddl").empty()
   var a = document.createElement('a')
   a.setAttribute("class", "btn btn-info glyphicon glyphicon-save-file")
   a.setAttribute("href", "http://localhost:3000/download/"+act)
   a.innerHTML = 'Téléchargement'
   var p = document.createElement('p')
-  p.innerHTML = 'Veuillez cliquer sur le bouton afin de télécharger la liste des profils du secteur'
+  p.innerHTML = 'Veuillez cliquer sur le bouton afin de télécharger la liste des profils du secteur : '+act
   $("#ddl").append(p)
   $("#ddl").append(a)
 }
@@ -49,6 +50,7 @@ function getLink(act){
 $( document ).ready(function() {
   $( "#allbut" ).click( function() {
     getProfil(url)
+    $("#ddl").empty()
   });
   $( "#banbut" ).click( function() {
     getProfil(urlban)
