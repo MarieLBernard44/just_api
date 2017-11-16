@@ -11,6 +11,8 @@ git clone https://github.com/MarieLBernard44/just_api.git
 cd just_api
 npm i
 ```
+Mise en place de la base de données:
+Importer le fichier ```dump.sql``` dans votre Système de Gestion de Base de Données MySQL
 
 Démarrage :
 
@@ -41,6 +43,7 @@ Configuration de la base de données (db-config.js)
   ...
 });
 ```
+Copier le fichier ```dump.sql``` fourni dans le répertoire ```just_api/docker-config/DB```
 
 Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
 
