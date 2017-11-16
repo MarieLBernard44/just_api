@@ -32,6 +32,7 @@ Clonage du repository
 ```bash
 git clone https://github.com/MarieLBernard44/just_api.git
 cd just_api
+npm i
 ```
 Configuration de la base de données (db-config.js)
 ``` const db  = mysql.createPool({
