@@ -1,9 +1,23 @@
+body {
+    background: linear-gradient( white, grey);
+}
+
+
+.container{
+    background: white;
+}
+
 h1, h3  {
   font-family: 'Oswald', sans-serif;
 }
 
 h1 { font-size: 50px;}
 h3 { margin-left: 20px; }
+
+img { 
+    height: 120px;
+    margin-left: 100px;;
+ }
 
 .btn {
   margin: 10px;
