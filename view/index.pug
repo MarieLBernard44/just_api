@@ -11,7 +11,9 @@ html
 
   body
     .container
-      a#deconnect.glyphicon.glyphicon-user
+      form(method='POST' action='/') 
+                      button#deconnect.glyphicon.glyphicon-user(type='submit') 
+                      span Déconnexion
       h1.title Liste des profils
         img(src=("./public/images/bandeau-ok.jpg"))
       <hr/>
@@ -37,5 +39,4 @@ html
               th Date d'inscription
           tbody#tabody
 
-    form(method='POST' action='/')
-                      button.btn.btn-primary(type='submit') Déconnexion
+    

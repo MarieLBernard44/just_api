@@ -3,15 +3,24 @@ body {
 }
 
 .glyphicon-user {
-    margin-left: 50px;
-    margin-top: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
     font-size: 30px;
     color: #D20859;
     cursor: pointer;
+    background: white;
 }
+
+span {
+    font-family: 'Oswald', sans-serif;
+    color: #D20859;
+    font-size: 25px;
+}
+
 
 .container{
     background: white;
+    min-height: 800px;
 }
 
 h1, h3  {
