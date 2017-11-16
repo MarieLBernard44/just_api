@@ -73,4 +73,4 @@ Préfixer l'api de l'uri suivante : /api/v1
 # Déploiement
 
 Pour protéger l'application des attaques cross-domain type CSRF (Cross-Site Request Forgery), il est nécessaire de renseigner
-le paramètre ```Access-Control-Allow-Origin``` dans les headers de la requête HTTP. Pour des raisons de sécurité, évitez d'utiliser le wildcard ```*``` et renseignez le nom de domaine de votre site.
+le paramètre ```Access-Control-Allow-Origin``` dans les headers de la requête HTTP (fichier ```app.js```). Pour des raisons de sécurité, évitez d'utiliser le wildcard ```*``` et renseignez le nom de domaine de votre site.
