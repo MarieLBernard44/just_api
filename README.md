@@ -43,7 +43,7 @@ Configuration de la base de données (db-config.js)
   ...
 });
 ```
-Copier le fichier ```dump.sql``` fourni dans le répertoire ```just_api/docker-config/DB```.
+Copier le fichier ```dump.sql``` fourni par e-mail, dans le répertoire ```just_api/docker-config/DB```.
 Ce dossier est destiné aux futures migrations de la base de données.
 
 Le port ouvert sur la machine hôte est le port 3000 et le port du serveur node JS exposé sur le conteneur est le 3000 
