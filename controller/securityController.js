@@ -18,14 +18,12 @@ class SecurityController {
 
         // check if login matches
         if (login !== 'test') {
-            res.status(403);
-            return res.json('Authentication failed');
+          return res.status(403).json('Authentication failed');
         } else {
 
             // check if password matches
             if (password !== 'password') {
-                res.status(403);
-                return res.json('Authentication failed');
+              return res.status(403).json('Authentication failed');
             } else {
 
                 // if user is found and password is right
@@ -113,8 +111,7 @@ class SecurityController {
             // verifies secret and checks exp
             jwt.verify(token, 'superPrivateKey', function (err, decoded) {
                 if (err) {
-                    res.status(403);
-                    return res.json('Access denied');
+                  return res.status(403).json('access_deny');
                 } else {
                     // if everything is good, save to request for use in other routes
                     req.decoded = decoded;
@@ -125,8 +122,7 @@ class SecurityController {
         } else {
             // if there is no token
             // return an error
-            res.status(403);
-            return res.json('Access denied');
+            return res.status(403).json('access_deny');
         }
     }
 }
